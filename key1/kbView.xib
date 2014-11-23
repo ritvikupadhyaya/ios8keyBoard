@@ -25,6 +25,7 @@
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B4F-dB-9PQ">
                     <rect key="frame" x="166" y="0.0" width="159" height="179"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
                     <state key="normal" image="Untitled1.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -70,15 +71,9 @@
                 <outlet property="dotKey" destination="vqA-sm-VQS" id="bBR-NZ-oA3"/>
                 <outlet property="enter" destination="8uA-8T-wsW" id="aTo-hd-dJq"/>
                 <outlet property="space" destination="emf-gC-1dm" id="B3b-bK-Pkv"/>
-                <outletCollection property="gestureRecognizers" destination="7bR-5t-qdi" appends="YES" id="QYp-Sa-0fg"/>
             </connections>
             <point key="canvasLocation" x="425" y="157"/>
         </view>
-        <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="7bR-5t-qdi">
-            <connections>
-                <action selector="pan:" destination="iN0-l3-epB" id="wYz-Zg-ZTr"/>
-            </connections>
-        </screenEdgePanGestureRecognizer>
     </objects>
     <resources>
         <image name="Untitled.png" width="51" height="51"/>
