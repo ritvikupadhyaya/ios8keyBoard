@@ -12,5 +12,5 @@
 
 @property (nonatomic, assign) UITextField *textField;
 
-//-(UIButton *)createButtonWithTitle:(NSString *)title;
+
 @end
