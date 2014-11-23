@@ -93,8 +93,13 @@ int currIndex = 0;
     //UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftRecog)];
     //left.direction = UISwipeGestureRecognizerDirectionLeft;
     UILongPressGestureRecognizer *left = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(leftRecog:)];
+    left.minimumPressDuration = 1.0;
     left.allowableMovement = 100.0f;
     [self.kbview.dashKey addGestureRecognizer:left];
+    
+    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe)];
+    [leftSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.kbview.dashKey addGestureRecognizer:leftSwipe];
     
 }
 -(void)pressSpaceKey{
@@ -122,6 +127,9 @@ int currIndex = 0;
     [self refreshChoices];
 }
 -(void)leftRecog:(UIPanGestureRecognizer *)gesture{
+        [self.textDocumentProxy deleteBackward];
+}
+-(void)leftSwipe{
     [self.textDocumentProxy deleteBackward];
 }
 -(void) pressChoiceL {

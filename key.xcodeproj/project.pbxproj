@@ -551,6 +551,7 @@
 				42F8A19E1A2181D5000D631B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42F8A19F1A2181D5000D631B /* Build configuration list for PBXNativeTarget "keyTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +560,7 @@
 				42F8A1A11A2181D5000D631B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42F8A1B01A2181FC000D631B /* Build configuration list for PBXNativeTarget "key1" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +569,7 @@
 				42F8A1B21A2181FC000D631B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
