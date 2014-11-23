@@ -107,7 +107,24 @@ int currIndex = 0;
     
 }
 -(void)pressSpaceKey{
-    [self.textDocumentProxy insertText:@" "];
+    NSString * temp =[self.textDocumentProxy documentContextBeforeInput];
+    int len = [temp length];
+    if (len>0) {
+        len = len - 1;
+    }
+    NSString *trimmedTemp = [temp stringByTrimmingCharactersInSet:
+                               [NSCharacterSet whitespaceCharacterSet]];
+    int trimmedLen = [trimmedTemp length];
+    if (trimmedLen>0) {
+        trimmedLen = trimmedLen - 1;
+    }
+    
+        if([[NSString stringWithFormat:@"%c",[temp characterAtIndex:len] ] isEqual:@" "] &&!([[NSString stringWithFormat:@"%c",[trimmedTemp characterAtIndex:trimmedLen] ] isEqual:@"."])){
+                [self.textDocumentProxy deleteBackward];
+            [self.textDocumentProxy insertText:@". "];
+        }else{
+        [self.textDocumentProxy insertText:@" "];
+        }
 }
 -(void)pressEnterKey{
     [self.textDocumentProxy insertText:@"\n"];
