@@ -14,6 +14,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *enter;
 @property (weak, nonatomic) IBOutlet UIButton *dotKey;
 @property (weak, nonatomic) IBOutlet UIButton *dashKey;
-- (IBAction)pan:(UIScreenEdgePanGestureRecognizer *)sender;
 
 @end

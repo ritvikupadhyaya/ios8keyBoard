@@ -64,7 +64,8 @@
     [self.kbview.change addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
     [self.kbview.dotKey addTarget:self action:@selector(pressDotKey) forControlEvents:UIControlEventTouchUpInside];
     [self.kbview.dashKey addTarget:self action:@selector(pressDashKey) forControlEvents:UIControlEventTouchUpInside];
-    [self.kbview.dashKey addTarget:self action:@selector(handleSwipe) forControlEvents:UISwipeGestureRecognizerDirectionLeft];
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panRecog)];
+    [self.kbview.dashKey addGestureRecognizer:pan];
     
 }
 -(void)pressSpaceKey{
@@ -79,9 +80,8 @@
 -(void)pressDashKey{
     [self.textDocumentProxy insertText:@"-"];
 }
-- (IBAction)pan:(UIScreenEdgePanGestureRecognizer *)sender {
+-(void)panRecog{
     [self.textDocumentProxy deleteBackward];
 }
-
 
 @end
