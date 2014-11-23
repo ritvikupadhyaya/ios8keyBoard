@@ -20,7 +20,7 @@
 		42F8A1BC1A21A40B000D631B /* kbView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F8A1BB1A21A40B000D631B /* kbView.xib */; };
 		42F8A1C01A21A7E4000D631B /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F8A1BF1A21A7E4000D631B /* Untitled.png */; };
 		42F8A1C21A21A88E000D631B /* Untitled1.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F8A1C11A21A88E000D631B /* Untitled1.png */; };
-		C4AD92EB1A21EDEB00C85D32 /* KeyboardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C4AD92EA1A21EDEB00C85D32 /* KeyboardBackground.png */; };
+		C4A75D401A224442006D285E /* KeyboardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A75D3F1A224442006D285E /* KeyboardBackground.png */; };
 		C4AD92F21A21EF6B00C85D32 /* Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = C4AD92F01A21EF6B00C85D32 /* Circle.png */; };
 		C4AD92F51A21EFB300C85D32 /* Dash.png in Resources */ = {isa = PBXBuildFile; fileRef = C4AD92F41A21EFB300C85D32 /* Dash.png */; };
 		C4AD92F71A21F06500C85D32 /* Globe.png in Resources */ = {isa = PBXBuildFile; fileRef = C4AD92F61A21F06500C85D32 /* Globe.png */; };
@@ -80,7 +80,7 @@
 		42F8A1BB1A21A40B000D631B /* kbView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kbView.xib; sourceTree = "<group>"; };
 		42F8A1BF1A21A7E4000D631B /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
 		42F8A1C11A21A88E000D631B /* Untitled1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled1.png; sourceTree = "<group>"; };
-		C4AD92EA1A21EDEB00C85D32 /* KeyboardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeyboardBackground.png; sourceTree = "<group>"; };
+		C4A75D3F1A224442006D285E /* KeyboardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeyboardBackground.png; sourceTree = "<group>"; };
 		C4AD92F01A21EF6B00C85D32 /* Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Circle.png; sourceTree = "<group>"; };
 		C4AD92F41A21EFB300C85D32 /* Dash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dash.png; sourceTree = "<group>"; };
 		C4AD92F61A21F06500C85D32 /* Globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe.png; sourceTree = "<group>"; };
@@ -181,10 +181,10 @@
 				42F8A1B91A21A3E0000D631B /* kbView.m */,
 				42F8A1BB1A21A40B000D631B /* kbView.xib */,
 				42F8A1C11A21A88E000D631B /* Untitled1.png */,
-				C4AD92EA1A21EDEB00C85D32 /* KeyboardBackground.png */,
 				42F8A1BF1A21A7E4000D631B /* Untitled.png */,
 				C4AD92F41A21EFB300C85D32 /* Dash.png */,
 				C4AD92F01A21EF6B00C85D32 /* Circle.png */,
+				C4A75D3F1A224442006D285E /* KeyboardBackground.png */,
 				C4AD92F61A21F06500C85D32 /* Globe.png */,
 				42F8A1A81A2181FC000D631B /* Supporting Files */,
 			);
@@ -321,10 +321,10 @@
 			files = (
 				42F8A1C01A21A7E4000D631B /* Untitled.png in Resources */,
 				C4AD92F21A21EF6B00C85D32 /* Circle.png in Resources */,
+				C4A75D401A224442006D285E /* KeyboardBackground.png in Resources */,
 				42F8A1C21A21A88E000D631B /* Untitled1.png in Resources */,
 				C4AD92F51A21EFB300C85D32 /* Dash.png in Resources */,
 				C4AD92F71A21F06500C85D32 /* Globe.png in Resources */,
-				C4AD92EB1A21EDEB00C85D32 /* KeyboardBackground.png in Resources */,
 				42F8A1BC1A21A40B000D631B /* kbView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
