@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>key.xcscheme</key>
+		<key>Geekeyboard.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>key1.xcscheme</key>
+		<key>GeekeyboardMorseInput.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>

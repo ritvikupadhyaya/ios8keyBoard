@@ -15,7 +15,7 @@
 		42F8A18D1A2181D5000D631B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F8A18B1A2181D5000D631B /* LaunchScreen.xib */; };
 		42F8A1991A2181D5000D631B /* keyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8A1981A2181D5000D631B /* keyTests.m */; };
 		42F8A1AC1A2181FC000D631B /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8A1AB1A2181FC000D631B /* KeyboardViewController.m */; };
-		42F8A1AF1A2181FC000D631B /* key1.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42F8A1A61A2181FB000D631B /* key1.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42F8A1AF1A2181FC000D631B /* GeekeyboardMorse.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42F8A1A61A2181FB000D631B /* GeekeyboardMorse.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42F8A1BA1A21A3E0000D631B /* kbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8A1B91A21A3E0000D631B /* kbView.m */; };
 		42F8A1BC1A21A40B000D631B /* kbView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F8A1BB1A21A40B000D631B /* kbView.xib */; };
 		42F8A1C01A21A7E4000D631B /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F8A1BF1A21A7E4000D631B /* Untitled.png */; };
@@ -50,7 +50,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				42F8A1AF1A2181FC000D631B /* key1.appex in Embed App Extensions */,
+				42F8A1AF1A2181FC000D631B /* GeekeyboardMorse.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,10 +68,10 @@
 		42F8A1871A2181D5000D631B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42F8A1891A2181D5000D631B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42F8A18C1A2181D5000D631B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		42F8A1921A2181D5000D631B /* keyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = keyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F8A1921A2181D5000D631B /* GeekeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeekeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F8A1971A2181D5000D631B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F8A1981A2181D5000D631B /* keyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = keyTests.m; sourceTree = "<group>"; };
-		42F8A1A61A2181FB000D631B /* key1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = key1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F8A1A61A2181FB000D631B /* GeekeyboardMorse.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GeekeyboardMorse.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F8A1A91A2181FC000D631B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F8A1AA1A2181FC000D631B /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
 		42F8A1AB1A2181FC000D631B /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				42F8A1791A2181D5000D631B /* key.app */,
-				42F8A1921A2181D5000D631B /* keyTests.xctest */,
-				42F8A1A61A2181FB000D631B /* key1.appex */,
+				42F8A1921A2181D5000D631B /* GeekeyboardTests.xctest */,
+				42F8A1A61A2181FB000D631B /* GeekeyboardMorse.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,9 +202,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42F8A1781A2181D5000D631B /* key */ = {
+		42F8A1781A2181D5000D631B /* Geekeyboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42F8A19C1A2181D5000D631B /* Build configuration list for PBXNativeTarget "key" */;
+			buildConfigurationList = 42F8A19C1A2181D5000D631B /* Build configuration list for PBXNativeTarget "Geekeyboard" */;
 			buildPhases = (
 				42F8A1751A2181D5000D631B /* Sources */,
 				42F8A1761A2181D5000D631B /* Frameworks */,
@@ -216,14 +216,14 @@
 			dependencies = (
 				42F8A1AE1A2181FC000D631B /* PBXTargetDependency */,
 			);
-			name = key;
+			name = Geekeyboard;
 			productName = key;
 			productReference = 42F8A1791A2181D5000D631B /* key.app */;
 			productType = "com.apple.product-type.application";
 		};
-		42F8A1911A2181D5000D631B /* keyTests */ = {
+		42F8A1911A2181D5000D631B /* GeekeyboardTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42F8A19F1A2181D5000D631B /* Build configuration list for PBXNativeTarget "keyTests" */;
+			buildConfigurationList = 42F8A19F1A2181D5000D631B /* Build configuration list for PBXNativeTarget "GeekeyboardTests" */;
 			buildPhases = (
 				42F8A18E1A2181D5000D631B /* Sources */,
 				42F8A18F1A2181D5000D631B /* Frameworks */,
@@ -234,14 +234,14 @@
 			dependencies = (
 				42F8A1941A2181D5000D631B /* PBXTargetDependency */,
 			);
-			name = keyTests;
+			name = GeekeyboardTests;
 			productName = keyTests;
-			productReference = 42F8A1921A2181D5000D631B /* keyTests.xctest */;
+			productReference = 42F8A1921A2181D5000D631B /* GeekeyboardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		42F8A1A51A2181FB000D631B /* key1 */ = {
+		42F8A1A51A2181FB000D631B /* GeekeyboardMorse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42F8A1B01A2181FC000D631B /* Build configuration list for PBXNativeTarget "key1" */;
+			buildConfigurationList = 42F8A1B01A2181FC000D631B /* Build configuration list for PBXNativeTarget "GeekeyboardMorse" */;
 			buildPhases = (
 				42F8A1A21A2181FB000D631B /* Sources */,
 				42F8A1A31A2181FB000D631B /* Frameworks */,
@@ -251,9 +251,9 @@
 			);
 			dependencies = (
 			);
-			name = key1;
+			name = GeekeyboardMorse;
 			productName = key1;
-			productReference = 42F8A1A61A2181FB000D631B /* key1.appex */;
+			productReference = 42F8A1A61A2181FB000D631B /* GeekeyboardMorse.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -290,9 +290,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42F8A1781A2181D5000D631B /* key */,
-				42F8A1911A2181D5000D631B /* keyTests */,
-				42F8A1A51A2181FB000D631B /* key1 */,
+				42F8A1781A2181D5000D631B /* Geekeyboard */,
+				42F8A1911A2181D5000D631B /* GeekeyboardTests */,
+				42F8A1A51A2181FB000D631B /* GeekeyboardMorse */,
 			);
 		};
 /* End PBXProject section */
@@ -364,12 +364,12 @@
 /* Begin PBXTargetDependency section */
 		42F8A1941A2181D5000D631B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42F8A1781A2181D5000D631B /* key */;
+			target = 42F8A1781A2181D5000D631B /* Geekeyboard */;
 			targetProxy = 42F8A1931A2181D5000D631B /* PBXContainerItemProxy */;
 		};
 		42F8A1AE1A2181FC000D631B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42F8A1A51A2181FB000D631B /* key1 */;
+			target = 42F8A1A51A2181FB000D631B /* GeekeyboardMorse */;
 			targetProxy = 42F8A1AD1A2181FC000D631B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -505,7 +505,7 @@
 				INFOPLIST_FILE = keyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/key.app/key";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geekeyboard.app/Geekeyboard";
 			};
 			name = Debug;
 		};
@@ -520,7 +520,7 @@
 				INFOPLIST_FILE = keyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/key.app/key";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geekeyboard.app/Geekeyboard";
 			};
 			name = Release;
 		};
@@ -560,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42F8A19C1A2181D5000D631B /* Build configuration list for PBXNativeTarget "key" */ = {
+		42F8A19C1A2181D5000D631B /* Build configuration list for PBXNativeTarget "Geekeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42F8A19D1A2181D5000D631B /* Debug */,
@@ -569,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42F8A19F1A2181D5000D631B /* Build configuration list for PBXNativeTarget "keyTests" */ = {
+		42F8A19F1A2181D5000D631B /* Build configuration list for PBXNativeTarget "GeekeyboardTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42F8A1A01A2181D5000D631B /* Debug */,
@@ -578,7 +578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42F8A1B01A2181FC000D631B /* Build configuration list for PBXNativeTarget "key1" */ = {
+		42F8A1B01A2181FC000D631B /* Build configuration list for PBXNativeTarget "GeekeyboardMorse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42F8A1B11A2181FC000D631B /* Debug */,
