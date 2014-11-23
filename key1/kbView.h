@@ -14,5 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *enter;
 @property (weak, nonatomic) IBOutlet UIButton *dotKey;
 @property (weak, nonatomic) IBOutlet UIButton *dashKey;
+@property (weak, nonatomic) IBOutlet UIButton *choiceL;
+@property (weak, nonatomic) IBOutlet UIButton *choiceM;
+@property (weak, nonatomic) IBOutlet UIButton *choiceR;
 
 @end

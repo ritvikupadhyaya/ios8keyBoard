@@ -23,7 +23,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B4F-dB-9PQ">
-                    <rect key="frame" x="166" y="37" width="159" height="142"/>
+                    <rect key="frame" x="159" y="37" width="166" height="142"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <state key="normal" image="Untitled1.png">
@@ -60,21 +60,21 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D4J-Dn-G6z">
                     <rect key="frame" x="220" y="-1" width="100" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button">
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Trg-ne-dLz">
                     <rect key="frame" x="0.0" y="-1" width="100" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button">
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A4s-mw-j3c">
                     <rect key="frame" x="100" y="-1" width="120" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button">
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -88,6 +88,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="change" destination="K07-Lc-y7P" id="G6m-XT-hMS"/>
+                <outlet property="choiceL" destination="Trg-ne-dLz" id="s3R-V0-l6k"/>
+                <outlet property="choiceM" destination="A4s-mw-j3c" id="OuR-5r-Sdn"/>
+                <outlet property="choiceR" destination="D4J-Dn-G6z" id="UBi-AV-yHC"/>
                 <outlet property="dashKey" destination="B4F-dB-9PQ" id="ujO-cy-0Tp"/>
                 <outlet property="dotKey" destination="vqA-sm-VQS" id="bBR-NZ-oA3"/>
                 <outlet property="enter" destination="8uA-8T-wsW" id="aTo-hd-dJq"/>
