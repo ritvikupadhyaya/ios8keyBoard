@@ -17,20 +17,20 @@
 @implementation KeyboardViewController
 
 
-char ch[63] = {NULL,
-    'T','E',
-    'M','N','A','I',
-    'O','G','K','D','W','R','U','S',
-    NULL,NULL,'Q','Z','Y','C','X','B',
-    'J','P',NULL,'L',NULL,'F','V','H',
-    '0','9',NULL,'8',NULL,NULL,NULL,'7',
-    NULL,NULL,NULL,NULL,NULL,'/',NULL,'6',
-    '1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,
-    '2',NULL,NULL,NULL,'3',NULL,'4','5',
+char ch[63] = {
+    NULL,
+    'E','T',
+    'I','A','N','M',
+    'S','U','R','W','D','K','G','O',
+    'H','V','F',NULL,'L',NULL,'P','J',
+        'B','X','C','Y','Z','Q',NULL,NULL,
+    '5','4',NULL,'3',NULL,NULL,NULL,'2',
+        NULL,NULL,'+',NULL,NULL,NULL,NULL,'1',
+        '6','=','/',NULL,NULL,NULL,NULL,NULL,
+        '7',NULL,NULL,NULL,'8',NULL,'9','0'
 };
 
 int currIndex = 0;
-
 
 
 - (void)updateViewConstraints {
@@ -41,11 +41,11 @@ int currIndex = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self refreshChoices];
     self.kbview = [[[NSBundle mainBundle] loadNibNamed:@"kbView" owner:nil options:nil] objectAtIndex:0];
     [self addGesturesToKeyboard];
     self.inputView = self.kbview;
     
+    [self refreshChoices];
     
 
 //    let button = createButtonWithTitle("A")
@@ -90,8 +90,10 @@ int currIndex = 0;
     [self.kbview.choiceL addTarget:self action:@selector(pressChoiceL) forControlEvents:UIControlEventTouchUpInside];
     [self.kbview.choiceM addTarget:self action:@selector(pressChoiceM) forControlEvents:UIControlEventTouchUpInside];
     [self.kbview.choiceR addTarget:self action:@selector(pressChoiceR) forControlEvents:UIControlEventTouchUpInside];
-    UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftRecog)];
-    left.direction = UISwipeGestureRecognizerDirectionLeft;
+    //UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftRecog)];
+    //left.direction = UISwipeGestureRecognizerDirectionLeft;
+    UILongPressGestureRecognizer *left = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(leftRecog:)];
+    left.allowableMovement = 100.0f;
     [self.kbview.dashKey addGestureRecognizer:left];
     
 }
@@ -102,10 +104,22 @@ int currIndex = 0;
     [self.textDocumentProxy insertText:@"\n"];
 }
 -(void)pressDotKey{
-    [self.textDocumentProxy insertText:@"."];
+    //[self.textDocumentProxy insertText:@"."];
+    if (currIndex < 32) {
+        currIndex = currIndex * 2 + 1;
+    } else {
+        currIndex = 0;
+    }
+    [self refreshChoices];
 }
 -(void)pressDashKey{
-    [self.textDocumentProxy insertText:@"-"];
+    //[self.textDocumentProxy insertText:@"-"];
+    if (currIndex < 32) {
+        currIndex = currIndex * 2 + 2;
+    } else {
+        currIndex = 0;
+    }
+    [self refreshChoices];
 }
 -(void)leftRecog:(UIPanGestureRecognizer *)gesture{
     [self.textDocumentProxy deleteBackward];
@@ -114,18 +128,21 @@ int currIndex = 0;
     if (ch[currIndex * 2 + 1] != NULL) {
         [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 1]]];
         currIndex = 0;
+        [self refreshChoices];
     }
 }
 -(void) pressChoiceM {
     if (ch[currIndex] != NULL) {
         [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex]]];
         currIndex = 0;
+        [self refreshChoices];
     }
 }
 -(void) pressChoiceR {
     if (ch[currIndex * 2 + 2] != NULL) {
         [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 2]]];
         currIndex = 0;
+        [self refreshChoices];
     }
 }
 
