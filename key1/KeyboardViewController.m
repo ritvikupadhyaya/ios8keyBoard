@@ -31,6 +31,7 @@ char ch[63] = {
 };
 
 int currIndex = 0;
+int morseCount = 0;
 
 
 - (void)updateViewConstraints {
@@ -80,6 +81,11 @@ int currIndex = 0;
     [self.kbview.choiceM setTitle:[NSString stringWithFormat:@"%c", ch[currIndex]] forState:UIControlStateNormal];
     [self.kbview.choiceR setTitle:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 2]] forState:UIControlStateNormal];
 }
+-(void) clearTempMorse {
+    for (int i = 0; i < morseCount; i++) {
+        [self.textDocumentProxy deleteBackward];
+    }
+}
 
 -(void) addGesturesToKeyboard{
     [self.kbview.space addTarget:self action:@selector(pressSpaceKey) forControlEvents:UIControlEventTouchUpInside];
@@ -114,6 +120,7 @@ int currIndex = 0;
         currIndex = currIndex * 2 + 1;
     } else {
         currIndex = 0;
+        morseCount = 0;
     }
     [self refreshChoices];
 }
@@ -123,6 +130,7 @@ int currIndex = 0;
         currIndex = currIndex * 2 + 2;
     } else {
         currIndex = 0;
+        morseCount = 0;
     }
     [self refreshChoices];
 }
@@ -136,6 +144,7 @@ int currIndex = 0;
     if (ch[currIndex * 2 + 1] != NULL) {
         [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 1]]];
         currIndex = 0;
+        morseCount = 0;
         [self refreshChoices];
     }
 }
@@ -143,6 +152,7 @@ int currIndex = 0;
     if (ch[currIndex] != NULL) {
         [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex]]];
         currIndex = 0;
+        morseCount = 0;
         [self refreshChoices];
     }
 }
@@ -150,6 +160,7 @@ int currIndex = 0;
     if (ch[currIndex * 2 + 2] != NULL) {
         [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 2]]];
         currIndex = 0;
+        morseCount = 0;
         [self refreshChoices];
     }
 }
