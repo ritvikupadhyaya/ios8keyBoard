@@ -64,8 +64,8 @@
     [self.kbview.change addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
     [self.kbview.dotKey addTarget:self action:@selector(pressDotKey) forControlEvents:UIControlEventTouchUpInside];
     [self.kbview.dashKey addTarget:self action:@selector(pressDashKey) forControlEvents:UIControlEventTouchUpInside];
-    UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftRecog)];
-    left.direction = UISwipeGestureRecognizerDirectionLeft;
+    UILongPressGestureRecognizer *left = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(leftRecog:)];
+    left.allowableMovement = 100.0f;
     [self.kbview.dashKey addGestureRecognizer:left];
     
 }
@@ -81,7 +81,7 @@
 -(void)pressDashKey{
     [self.textDocumentProxy insertText:@"-"];
 }
--(void)leftRecog{
+-(void)leftRecog:(UIPanGestureRecognizer *)gesture{
     [self.textDocumentProxy deleteBackward];
 }
 
