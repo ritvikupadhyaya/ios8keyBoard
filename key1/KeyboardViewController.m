@@ -146,9 +146,9 @@ int morseCount = 0;
 }
 -(void)pressDotKey{
     [self.textDocumentProxy insertText:@"."];
+    morseCount++;
     if (currIndex < 32) {
         currIndex = currIndex * 2 + 1;
-        morseCount++;
     } else {
         [self clearTempMorse];
         currIndex = 0;
@@ -158,9 +158,9 @@ int morseCount = 0;
 }
 -(void)pressDashKey{
     [self.textDocumentProxy insertText:@"-"];
+    morseCount++;
     if (currIndex < 32) {
         currIndex = currIndex * 2 + 2;
-        morseCount++;
     } else {
         [self clearTempMorse];
         currIndex = 0;
