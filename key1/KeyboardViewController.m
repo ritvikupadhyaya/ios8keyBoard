@@ -107,6 +107,10 @@ int morseCount = 0;
     [leftSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.kbview.dashKey addGestureRecognizer:leftSwipe];
     
+    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe)];
+    [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.kbview.dotKey addGestureRecognizer:rightSwipe];
+    
 }
 -(void)pressSpaceKey{
     [self.textDocumentProxy insertText:@" "];
@@ -140,6 +144,10 @@ int morseCount = 0;
 -(void)leftSwipe{
     [self.textDocumentProxy deleteBackward];
 }
+-(void)rightSwipe{
+    [self pressChoiceM];    
+}
+
 -(void) pressChoiceL {
     if (ch[currIndex * 2 + 1] != NULL) {
         [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 1]]];
