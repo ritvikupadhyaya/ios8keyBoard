@@ -107,7 +107,7 @@ int currIndex = 0;
 -(void)pressDashKey{
     [self.textDocumentProxy insertText:@"-"];
 }
--(void)leftRecog{
+-(void)leftRecog:(UIPanGestureRecognizer *)gesture{
     [self.textDocumentProxy deleteBackward];
 }
 -(void) pressChoiceL {
