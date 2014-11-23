@@ -82,8 +82,17 @@ int morseCount = 0;
     [self.kbview.choiceR setTitle:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 2]] forState:UIControlStateNormal];
 }
 -(void) clearTempMorse {
-    for (int i = 0; i < morseCount; i++) {
+    int temp = morseCount;
+    for (int i = 0; i < temp; i++) {
         [self.textDocumentProxy deleteBackward];
+        [self gotoParentNode];
+    }
+}
+-(void) gotoParentNode {
+    if (currIndex > 0) {
+        currIndex = (currIndex / 2 - (1 - (currIndex % 2)));
+        morseCount--;
+        [self refreshChoices];
     }
 }
 
@@ -119,30 +128,36 @@ int morseCount = 0;
     [self.textDocumentProxy insertText:@"\n"];
 }
 -(void)pressDotKey{
-    //[self.textDocumentProxy insertText:@"."];
+    [self.textDocumentProxy insertText:@"."];
     if (currIndex < 32) {
         currIndex = currIndex * 2 + 1;
+        morseCount++;
     } else {
+        [self clearTempMorse];
         currIndex = 0;
         morseCount = 0;
     }
     [self refreshChoices];
 }
 -(void)pressDashKey{
-    //[self.textDocumentProxy insertText:@"-"];
+    [self.textDocumentProxy insertText:@"-"];
     if (currIndex < 32) {
         currIndex = currIndex * 2 + 2;
+        morseCount++;
     } else {
+        [self clearTempMorse];
         currIndex = 0;
         morseCount = 0;
     }
     [self refreshChoices];
 }
 -(void)leftRecog:(UIPanGestureRecognizer *)gesture{
-        [self.textDocumentProxy deleteBackward];
+    [self.textDocumentProxy deleteBackward];
+    [self gotoParentNode];
 }
 -(void)leftSwipe{
     [self.textDocumentProxy deleteBackward];
+    [self gotoParentNode];
 }
 -(void)rightSwipe{
     [self pressChoiceM];    
@@ -150,7 +165,9 @@ int morseCount = 0;
 
 -(void) pressChoiceL {
     if (ch[currIndex * 2 + 1] != NULL) {
-        [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 1]]];
+        int temp = currIndex;
+        [self clearTempMorse];
+        [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[temp * 2 + 1]]];
         currIndex = 0;
         morseCount = 0;
         [self refreshChoices];
@@ -158,7 +175,9 @@ int morseCount = 0;
 }
 -(void) pressChoiceM {
     if (ch[currIndex] != NULL) {
-        [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex]]];
+        int temp = currIndex;
+        [self clearTempMorse];
+        [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[temp]]];
         currIndex = 0;
         morseCount = 0;
         [self refreshChoices];
@@ -166,7 +185,9 @@ int morseCount = 0;
 }
 -(void) pressChoiceR {
     if (ch[currIndex * 2 + 2] != NULL) {
-        [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 2]]];
+        int temp = currIndex;
+        [self clearTempMorse];
+        [self.textDocumentProxy insertText:[NSString stringWithFormat:@"%c", ch[temp * 2 + 2]]];
         currIndex = 0;
         morseCount = 0;
         [self refreshChoices];
