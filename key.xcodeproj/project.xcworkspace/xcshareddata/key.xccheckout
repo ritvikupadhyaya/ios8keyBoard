@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0379F984-7524-40E6-AA22-72ED5C594C7C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>key</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C2FF9361F6A3AD2E8E11481C4945274306F1D86A</key>
+		<string>https://github.com/ritvikupadhyaya/ios8keyBoard.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>key.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C2FF9361F6A3AD2E8E11481C4945274306F1D86A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ritvikupadhyaya/ios8keyBoard.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C2FF9361F6A3AD2E8E11481C4945274306F1D86A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C2FF9361F6A3AD2E8E11481C4945274306F1D86A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>key</string>
+		</dict>
+	</array>
+</dict>
+</plist>
