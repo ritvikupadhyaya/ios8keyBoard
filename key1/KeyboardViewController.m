@@ -45,7 +45,8 @@ int morseCount = 0;
     self.kbview = [[[NSBundle mainBundle] loadNibNamed:@"kbView" owner:nil options:nil] objectAtIndex:0];
     [self addGesturesToKeyboard];
     self.inputView = self.kbview;
-    
+    [self gotoHeadNode];
+
     [self refreshChoices];
     
 
@@ -94,6 +95,13 @@ int morseCount = 0;
         morseCount--;
         [self refreshChoices];
     }
+}
+-(void) gotoHeadNode {
+    while (currIndex>0) {
+        NSLog(@"-----------CURRINDEX-------:%d",currIndex);
+        [self gotoParentNode];
+    }
+
 }
 
 -(void) addGesturesToKeyboard{
