@@ -58,7 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		42F8A1791A2181D5000D631B /* key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = key.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F8A1791A2181D5000D631B /* Geekeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geekeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F8A17D1A2181D5000D631B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F8A17E1A2181D5000D631B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42F8A1801A2181D5000D631B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		42F8A17A1A2181D5000D631B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42F8A1791A2181D5000D631B /* key.app */,
+				42F8A1791A2181D5000D631B /* Geekeyboard.app */,
 				42F8A1921A2181D5000D631B /* GeekeyboardTests.xctest */,
 				42F8A1A61A2181FB000D631B /* GeekeyboardMorse.appex */,
 			);
@@ -218,7 +218,7 @@
 			);
 			name = Geekeyboard;
 			productName = key;
-			productReference = 42F8A1791A2181D5000D631B /* key.app */;
+			productReference = 42F8A1791A2181D5000D631B /* Geekeyboard.app */;
 			productType = "com.apple.product-type.application";
 		};
 		42F8A1911A2181D5000D631B /* GeekeyboardTests */ = {
