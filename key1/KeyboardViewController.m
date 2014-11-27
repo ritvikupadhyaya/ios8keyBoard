@@ -29,7 +29,6 @@ char ch[63] = {
         '6','=','/',NULL,NULL,NULL,NULL,NULL,
         '7',NULL,NULL,NULL,'8',NULL,'9','0'
 };
-
 int currIndex = 0;
 int morseCount = 0;
 int mode = 2;
@@ -79,6 +78,14 @@ bool firstLetter = true;
     }
     
 }
+-(void)advanceToNextInputMode{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:mode forKey:@"mode"];
+    [defaults setInteger:currIndex forKey:@"currIndex"];
+    [defaults setInteger:morseCount forKey:@"morseIndex"];
+    [defaults setBool:firstLetter forKey:@"firstLetter"];
+    [super advanceToNextInputMode];
+}
 
 # pragma mark Keyboard Event Handler
 
@@ -103,7 +110,6 @@ bool firstLetter = true;
 }
 -(void) gotoHeadNode {
     while (currIndex>0) {
-        NSLog(@"-----------CURRINDEX-------:%d",currIndex);
         [self gotoParentNode];
     }
 
@@ -255,7 +261,6 @@ bool firstLetter = true;
             return outStr;
             break;
         default:
-            //outStr = [inStr lowercaseString];
             return inStr;
             break;
     }
