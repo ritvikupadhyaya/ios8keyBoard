@@ -43,8 +43,8 @@ bool firstLetter = true;
 
 - (void)viewDidLoad {
     mode = 2;
-    firstLetter = [defaults boolForKey:@"firstLetter"];
     [super viewDidLoad];
+    firstLetter = true;
     self.kbview = [[[NSBundle mainBundle] loadNibNamed:@"kbView" owner:nil options:nil] objectAtIndex:0];
     [self addGesturesToKeyboard];
     self.inputView = self.kbview;
@@ -79,11 +79,9 @@ bool firstLetter = true;
     }
     
 }
+
 -(void)advanceToNextInputMode{
      defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:mode forKey:@"mode"];
-    [defaults setInteger:currIndex forKey:@"currIndex"];
-    [defaults setInteger:morseCount forKey:@"morseIndex"];
     [defaults setBool:firstLetter forKey:@"firstLetter"];
     [super advanceToNextInputMode];
 }
@@ -139,15 +137,22 @@ bool firstLetter = true;
     [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.kbview.dotKey addGestureRecognizer:rightSwipe];
     
-    UISwipeGestureRecognizer *downSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(downSwipe)];
-    [downSwipe setDirection:UISwipeGestureRecognizerDirectionDown];
-    [self.kbview.dotKey addGestureRecognizer:downSwipe];
-    [self.kbview.dashKey addGestureRecognizer:downSwipe];
+    UISwipeGestureRecognizer *downSwipeDot = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(downSwipe)];
+    [downSwipeDot setDirection:UISwipeGestureRecognizerDirectionDown];
+    [self.kbview.dotKey addGestureRecognizer:downSwipeDot];
     
-    UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upSwipe)];
-    [upSwipe setDirection:UISwipeGestureRecognizerDirectionUp];
-    [self.kbview.dotKey addGestureRecognizer:upSwipe];
-    [self.kbview.dashKey addGestureRecognizer:upSwipe];
+    UISwipeGestureRecognizer *downSwipeDash = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(downSwipe)];
+    [downSwipeDash setDirection:UISwipeGestureRecognizerDirectionDown];
+    
+    [self.kbview.dashKey addGestureRecognizer:downSwipeDash];
+    
+    UISwipeGestureRecognizer *upSwipeDot = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upSwipe)];
+    [upSwipeDot setDirection:UISwipeGestureRecognizerDirectionUp];
+    [self.kbview.dotKey addGestureRecognizer:upSwipeDot];
+
+    UISwipeGestureRecognizer *upSwipeDash = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upSwipe)];
+    [upSwipeDash setDirection:UISwipeGestureRecognizerDirectionUp];
+    [self.kbview.dashKey addGestureRecognizer:upSwipeDash];
 }
 
 -(void)pressSpaceKey{
