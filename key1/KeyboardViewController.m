@@ -142,11 +142,12 @@ bool firstLetter = true;
     UISwipeGestureRecognizer *downSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(downSwipe)];
     [downSwipe setDirection:UISwipeGestureRecognizerDirectionDown];
     [self.kbview.dotKey addGestureRecognizer:downSwipe];
+    [self.kbview.dashKey addGestureRecognizer:downSwipe];
     
     UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upSwipe)];
     [upSwipe setDirection:UISwipeGestureRecognizerDirectionUp];
     [self.kbview.dotKey addGestureRecognizer:upSwipe];
-
+    [self.kbview.dashKey addGestureRecognizer:upSwipe];
 }
 
 -(void)pressSpaceKey{
