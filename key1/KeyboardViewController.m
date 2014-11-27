@@ -133,11 +133,11 @@ bool firstLetter = true;
     
     UISwipeGestureRecognizer *downSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(downSwipe)];
     [downSwipe setDirection:UISwipeGestureRecognizerDirectionDown];
-    [self.kbview addGestureRecognizer:downSwipe];
+    [self.kbview.dotKey addGestureRecognizer:downSwipe];
     
     UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upSwipe)];
-    [upSwipe setDirection:UISwipeGestureRecognizerDirectionDown];
-    [self.kbview addGestureRecognizer:upSwipe];
+    [upSwipe setDirection:UISwipeGestureRecognizerDirectionUp];
+    [self.kbview.dotKey addGestureRecognizer:upSwipe];
 
 }
 
@@ -203,19 +203,23 @@ bool firstLetter = true;
     [self gotoParentNode];
 }
 -(void)leftSwipe{
+    //[self.kbview.space setTitle:@"leftSwipe" forState: UIControlStateNormal];
     [self.textDocumentProxy deleteBackward];
     [self gotoParentNode];
 }
 -(void)rightSwipe{
+    //[self.kbview.space setTitle:@"rightSwipe" forState: UIControlStateNormal];
     [self pressChoiceM];    
 }
 -(void)downSwipe{
+    //[self.kbview.space setTitle:@"downSwipe" forState: UIControlStateNormal];
     if (mode > 1) {
         mode--;
     }
     [self refreshChoices];
 }
 -(void)upSwipe{
+   // [self.kbview.space setTitle:@"upSwipe" forState: UIControlStateNormal];
     if (mode < 3) {
         mode++;
     }
@@ -246,8 +250,8 @@ bool firstLetter = true;
             return outStr;
             break;
         default:
-            outStr = [inStr lowercaseString];
-            return outStr;
+            //outStr = [inStr lowercaseString];
+            return inStr;
             break;
     }
     return outStr;
