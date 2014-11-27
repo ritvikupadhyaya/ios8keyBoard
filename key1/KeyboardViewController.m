@@ -43,6 +43,7 @@ bool firstLetter = true;
 
 - (void)viewDidLoad {
     mode = 2;
+    firstLetter = true;
     [super viewDidLoad];
     self.kbview = [[[NSBundle mainBundle] loadNibNamed:@"kbView" owner:nil options:nil] objectAtIndex:0];
     [self addGesturesToKeyboard];
@@ -144,23 +145,28 @@ bool firstLetter = true;
 -(void)pressSpaceKey{
     NSString * temp =[self.textDocumentProxy documentContextBeforeInput];
     int len = [temp length];
-    if (len>0) {
+    if (len > 0) {
         len = len - 1;
     }
     NSString *trimmedTemp = [temp stringByTrimmingCharactersInSet:
                                [NSCharacterSet whitespaceCharacterSet]];
     int trimmedLen = [trimmedTemp length];
-    if (trimmedLen>0) {
+    if (trimmedLen > 0) {
         trimmedLen = trimmedLen - 1;
     }
-    
+    if (trimmedLen != 0) {
         if([[NSString stringWithFormat:@"%c",[temp characterAtIndex:len] ] isEqual:@" "] &&!([[NSString stringWithFormat:@"%c",[trimmedTemp characterAtIndex:trimmedLen] ] isEqual:@"."])){
                 [self.textDocumentProxy deleteBackward];
             [self.textDocumentProxy insertText:@". "];
             firstLetter = true;
-        }else{
-        [self.textDocumentProxy insertText:@" "];
+        } else {
+            [self.textDocumentProxy insertText:@" "];
         }
+        [self refreshChoices];
+    } else {
+        [self.textDocumentProxy insertText:@" "];
+    }
+    [self refreshChoices];
 }
 
 -(void)pressEnterKey{
