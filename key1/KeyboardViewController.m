@@ -42,9 +42,8 @@ bool firstLetter = true;
 }
 
 - (void)viewDidLoad {
-    mode = 0;
+    mode = 2;
     [super viewDidLoad];
-    [self.textDocumentProxy setAutocapitalizationType:UITextAutocapitalizationTypeSentences];
     self.kbview = [[[NSBundle mainBundle] loadNibNamed:@"kbView" owner:nil options:nil] objectAtIndex:0];
     [self addGesturesToKeyboard];
     self.inputView = self.kbview;
@@ -84,8 +83,8 @@ bool firstLetter = true;
 
 -(void) refreshChoices {
     [self.kbview.choiceL setTitle:[self stringCase:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 1]]] forState:UIControlStateNormal];
-    [self.kbview.choiceM setTitle:[NSString stringWithFormat:@"%c", ch[currIndex]] forState:UIControlStateNormal];
-    [self.kbview.choiceR setTitle:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 2]] forState:UIControlStateNormal];
+    [self.kbview.choiceM setTitle:[self stringCase:[NSString stringWithFormat:@"%c", ch[currIndex]] ] forState:UIControlStateNormal];
+    [self.kbview.choiceR setTitle:[self stringCase:[NSString stringWithFormat:@"%c", ch[currIndex * 2 + 2]]] forState:UIControlStateNormal];
 }
 -(void) clearTempMorse {
     int temp = morseCount;
@@ -134,13 +133,11 @@ bool firstLetter = true;
     
     UISwipeGestureRecognizer *downSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(downSwipe)];
     [downSwipe setDirection:UISwipeGestureRecognizerDirectionDown];
-    [self.kbview.dotKey addGestureRecognizer:downSwipe];
-    [self.kbview.dashKey addGestureRecognizer:downSwipe];
+    [self.kbview addGestureRecognizer:downSwipe];
     
     UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upSwipe)];
     [upSwipe setDirection:UISwipeGestureRecognizerDirectionDown];
-    [self.kbview.dashKey addGestureRecognizer:upSwipe];
-    [self.kbview.dotKey addGestureRecognizer:upSwipe];
+    [self.kbview addGestureRecognizer:upSwipe];
 
 }
 
@@ -216,11 +213,13 @@ bool firstLetter = true;
     if (mode > 1) {
         mode--;
     }
+    [self refreshChoices];
 }
 -(void)upSwipe{
     if (mode < 3) {
         mode++;
     }
+    [self refreshChoices];
 }
 
 #pragma mark Mode Based Insertion Correction
