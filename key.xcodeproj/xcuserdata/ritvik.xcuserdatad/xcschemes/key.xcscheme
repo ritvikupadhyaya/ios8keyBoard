@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42F8A1781A2181D5000D631B"
-               BuildableName = "key.app"
-               BlueprintName = "key"
+               BuildableName = "Geekeyboard.app"
+               BlueprintName = "Geekeyboard"
                ReferencedContainer = "container:key.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42F8A1911A2181D5000D631B"
-               BuildableName = "keyTests.xctest"
-               BlueprintName = "keyTests"
+               BuildableName = "GeekeyboardTests.xctest"
+               BlueprintName = "GeekeyboardTests"
                ReferencedContainer = "container:key.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42F8A1911A2181D5000D631B"
-               BuildableName = "keyTests.xctest"
-               BlueprintName = "keyTests"
+               BuildableName = "GeekeyboardTests.xctest"
+               BlueprintName = "GeekeyboardTests"
                ReferencedContainer = "container:key.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42F8A1781A2181D5000D631B"
-            BuildableName = "key.app"
-            BlueprintName = "key"
+            BuildableName = "Geekeyboard.app"
+            BlueprintName = "Geekeyboard"
             ReferencedContainer = "container:key.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42F8A1781A2181D5000D631B"
-            BuildableName = "key.app"
-            BlueprintName = "key"
+            BuildableName = "Geekeyboard.app"
+            BlueprintName = "Geekeyboard"
             ReferencedContainer = "container:key.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -94,8 +94,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42F8A1781A2181D5000D631B"
-            BuildableName = "key.app"
-            BlueprintName = "key"
+            BuildableName = "Geekeyboard.app"
+            BlueprintName = "Geekeyboard"
             ReferencedContainer = "container:key.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
