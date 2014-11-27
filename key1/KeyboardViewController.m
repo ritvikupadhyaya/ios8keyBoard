@@ -179,6 +179,9 @@ bool firstLetter = true;
         morseCount = 0;
     }
     firstLetter = false;
+    if (mode !=3) {
+        mode = 2;
+    }
     [self refreshChoices];
 }
 
@@ -193,6 +196,9 @@ bool firstLetter = true;
         morseCount = 0;
     }
     firstLetter = false;
+    if (mode !=3) {
+        mode = 2;
+    }
     [self refreshChoices];
 }
 
