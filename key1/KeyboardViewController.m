@@ -29,6 +29,7 @@ char ch[63] = {
         '6','=','/',NULL,NULL,NULL,NULL,NULL,
         '7',NULL,NULL,NULL,'8',NULL,'9','0'
 };
+NSUserDefaults *defaults;
 int currIndex = 0;
 int morseCount = 0;
 int mode = 2;
@@ -42,7 +43,7 @@ bool firstLetter = true;
 
 - (void)viewDidLoad {
     mode = 2;
-    firstLetter = true;
+    firstLetter = [defaults boolForKey:@"firstLetter"];
     [super viewDidLoad];
     self.kbview = [[[NSBundle mainBundle] loadNibNamed:@"kbView" owner:nil options:nil] objectAtIndex:0];
     [self addGesturesToKeyboard];
@@ -79,7 +80,7 @@ bool firstLetter = true;
     
 }
 -(void)advanceToNextInputMode{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+     defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:mode forKey:@"mode"];
     [defaults setInteger:currIndex forKey:@"currIndex"];
     [defaults setInteger:morseCount forKey:@"morseIndex"];
