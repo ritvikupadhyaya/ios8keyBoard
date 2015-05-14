@@ -16,7 +16,9 @@
 
 @implementation KeyboardViewController
 
-
+/**
+ *  Char array.
+ */
 char ch[63] = {
     NULL,
     'E','T',
